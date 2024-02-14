@@ -3,6 +3,7 @@
 
 *.code-workspace
 env/
+cfg.sh
 
 ### Flask ###
 instance/*
