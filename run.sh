@@ -1,5 +1,5 @@
 #!/bin/sh
 
-./cfg.sh
+source cfg.sh
 
 flask --app facereference run
