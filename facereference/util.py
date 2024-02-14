@@ -53,5 +53,4 @@ def queryUser(cursor: sqlite3.Cursor, name):
     q = """SELECT * FROM users
                    WHERE username=?"""
     user = cursor.execute(q, (name,)).fetchone()
-    if not user:
-        return None
+    return user

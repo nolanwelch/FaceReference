@@ -9,10 +9,12 @@ def index():
     return top + redirect
 
 
-@app.route("/user/<name>")
-def user(name):
-    data = queryUser(name)
-    if not data:
-        return f"Sorry, but it doesn't look like user \"{name}\" exists."
+@app.route("/user/<username>")
+def user(username):
+    user = queryUser(username)
+    if not user:
+        return f'Sorry, but it doesn\'t look like user "{username}" exists.'
 
-    return f"<h2>Hello, {name}!"
+    fullname = f"<h2>{user['firstname']} {user['lastname']}</h2>"
+    datecreated = f"<h3>Account created {user['datecreated']}</h3>"
+    return fullname + datecreated
