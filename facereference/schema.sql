@@ -13,8 +13,8 @@ CREATE TABLE users (
 CREATE TABLE images (
     id INT PRIMARY KEY,
     uri TEXT NOT NULL,
-    heightPx INT NOT NULL,
-    widthPx INT NOT NULL,
+    height INT NOT NULL,
+    width INT NOT NULL,
     altText TEXT
 );
 
@@ -26,7 +26,6 @@ CREATE TABLE imagetags (
 );
 
 CREATE TABLE tags (
-    id INT,
-    tag TEXT,
-    PRIMARY KEY (id, tag)
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    tag TEXT
 );
