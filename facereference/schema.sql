@@ -11,7 +11,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE images (
-    id INT PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     uri TEXT NOT NULL,
     height INT NOT NULL,
     width INT NOT NULL,
