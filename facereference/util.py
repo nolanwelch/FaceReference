@@ -32,7 +32,6 @@ def withCursor(func):
 
 
 def get_db() -> sqlite3.Connection:
-
     if "db" not in g:
         g.db = sqlite3.connect(
             current_app.config["DATABASE"], detect_types=sqlite3.PARSE_DECLTYPES
@@ -51,6 +50,14 @@ def close_db():
 @withCursor
 def queryUser(cursor: sqlite3.Cursor, name):
     q = """SELECT * FROM users
-                   WHERE username=?"""
+            WHERE username=?"""
     user = cursor.execute(q, (name,)).fetchone()
     return user
+
+
+@withCursor
+def queryImage(cursor: sqlite3.Cursor, id):
+    q = """SELECT * FROM images
+            WHERE id=?"""
+    img = cursor.execute(q, (id,)).fetchone()
+    return img
